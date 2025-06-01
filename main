@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Three Column Footer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Raleway', sans-serif;
+    background: url('chairchairchair.webp') no-repeat center -100px / cover;
+    overflow-x: hidden;
+    position: relative;
+    color: #fff;
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+  body::before {
+    content: "";
+    position: fixed; /* fixed so it stays behind everything even on scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 43, 43, 0.7);
+    z-index: 0;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem 6rem;
+  }
+
+  header, section, footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Navigation bar at top */
+  nav.primary-nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 1.5rem 0 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+  }
+  nav.primary-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.125rem;
+    padding: 0.25rem 0.5rem;
+    transition: color 0.3s ease;
+  }
+  nav.primary-nav a:hover,
+  nav.primary-nav a:focus {
+    color: #ff7300;
+    outline: none;
+  }
+
+  /* Hero text */
+  .centertext {
+    text-align: center;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  .line {
+    width: 6%;
+    height: 2px;
+    background-color: rgba(255, 115, 0, 0.85);
+    margin: 1rem auto 2rem;
+    border-radius: 9999px;
+  }
+  .undercenter {
+    text-align: center;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    max-width: 650px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.4;
+  }
+  .button-primary {
+    display: block;
+    margin: 0 auto 4rem;
+    font-size: 1.125rem;
+    padding: 0.75rem 2.5rem;
+    border: none;
+    border-radius: 30px;
+    background-color: rgba(255, 115, 0, 0.85);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .button-primary:hover,
+  .button-primary:focus {
+    background-color: #ff7300;
+    outline: none;
+    transform: scale(1.05);
+  }
+
+  /* Section: Why coding is important */
+  .codingisimportant {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    background: linear-gradient(to bottom, rgba(46, 43, 43, 0.7), rgb(82, 80, 80));
+    color: #d5d5d5;
+    border-radius: 10px;
+    flex-wrap: wrap;
+  }
+  .cdisimportanttext {
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    flex: 1 1 300px;
+    min-width: 280px;
+  }
+  .cdisimportanttext2 {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    flex: 2 1 400px;
+    min-width: 300px;
+  }
+  .cdisimpimage {
+    flex: 1 1 300px;
+    min-width: 280px;
+    height: 300px;
+    background: url('image18.png') no-repeat center/cover;
+    border-radius: 10px;
+    margin-top: 1rem;
+  }
+
+  /* Pricing Cards */
+  .pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 4rem 1rem 6rem;
+    flex-wrap: wrap;
+  }
+  .card-basic, .card-standard, .card-premium {
+    width: 280px;
+    background: #fff;
+    color: #444;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(51, 51, 51, 0.2);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-basic:hover, .card-standard:hover, .card-premium:hover {
+    transform: scale(1.05);
+  }
+  .card-header {
+    padding: 1rem 0;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+    border-radius: 1rem 1rem 0 0;
+  }
+  .header-basic {
+    background: linear-gradient(135deg, #0077ee, #06c766);
+  }
+  .header-standard {
+    background: linear-gradient(135deg, #b202c9, #cf087c);
+  }
+  .header-premium {
+    background: linear-gradient(135deg, #eea300, #ee5700);
+  }
+  .card-body {
+    padding: 1.5rem 1rem 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-body h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .card-element-container {
+    list-style: none;
+    color: #444;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+    text-align: left;
+  }
+  .card-element-container li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .card-element-container li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #06c766;
+    font-weight: 700;
+  }
+  .btn {
+    padding: 0.75rem 1.25rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .btn-basic {
+    background: linear-gradient(135deg, #0077ee, #06c766);
+  }
+  .btn-standard {
+    background: linear-gradient(135deg, #b202c9, #cf087c);
+  }
+  .btn-premium {
+    background: linear-gradient(135deg, #eea300, #ee5700);
+  }
+  .btn:hover,
+  .btn:focus {
+    transform: scale(0.95);
+    outline: none;
+  }
+
+  /* Footer Title */
+  .footer-title-wrapper {
+    margin-top: 8rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .footer-title-container {
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .footer-title-container .line {
+    height: 1px;
+    background-color: #333;
+    flex-grow: 1;
+  }
+  .footer-title-container .title {
+    font-family: 'Bodoni Moda', serif;
+    color: #333;
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
+
+  /* Footer */
+  footer.footer {
+    width: 100%;
+    background-color: #222;
+    color: #e4e4e4;
+    padding: 3rem 1rem 4rem;
+  }
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    flex-wrap: wrap;
+  }
+  .footer-content nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 150px;
+  }
+  .footer-heading {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  .footer-link {
+    font-size: 0.95rem;
+    color: #bdbdbd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .footer-link:hover,
+  .footer-link:focus {
+    color: #00cccc;
+    text-decoration: underline;
+    outline: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .codingisimportant {
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .cdisimpimage {
+      margin-top: 1rem;
+      height: 250px;
+      width: 100%;
+      max-width: 300px;
+      align-self: center;
+    }
+    .pricing-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    nav.primary-nav {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }
+  @media (max-width: 480px) {
+    .centertext {
+      font-size: 2rem;
+    }
+    .undercenter {
+      font-size: 1rem;
+      padding: 0 0.5rem;
+    }
+    .button-primary {
+      font-size: 1rem;
+      padding: 0.75rem 2rem;
+    }
+    .footer-content {
+      gap: 3rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <main>
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="#home" tabindex="0">Home</a>
+      <a href="#about" tabindex="0">About</a>
+      <a href="#services" tabindex="0">Services</a>
+      <a href="#portfolio" tabindex="0">Portfolio</a>
+      <a href="#contact" tabindex="0">Contact</a>
+    </nav>
+
+    <header>
+      <h1 class="centertext">Code Your Vision, Design Your Reality.</h1>
+      <div class="line" aria-hidden="true"></div>
+      <p class="undercenter">
+        From idea to execution—learn, build, and deploy real-world projects with expert<br />
+        guidance and modern tools. Join a community where coders craft the future.
+      </p>
+      <button class="button-primary" type="button" aria-label="Find out more about coding and projects">
+        FIND OUT MORE
+      </button>
+    </header>
+
+    <section class="codingisimportant" aria-labelledby="coding-importance-title">
+      <div>
+        <h2 id="coding-importance-title" class="cdisimportanttext">Why coding is important</h2>
+        <p class="cdisimportanttext2">
+          Coding is important because it's the foundation of our digital world, powering everything from websites and apps to software and even everyday devices.
+          It's not just for tech professionals; understanding coding enhances problem-solving, logical thinking, and creativity, skills valuable across various fields.
+          Essentially, coding allows us to communicate with computers and instruct them to perform tasks, making it the "language of the modern world".
+        </p>
+      </div>
+      <div class="cdisimpimage" role="img" aria-label="Coding related illustrative image"></div>
+    </section>
+
+    <section class="pricing-container" aria-label="Pricing plans">
+      <article class="card-basic" role="region" aria-labelledby="basic-plan-title">
+        <div class="card-header header-basic">
+          <h3 id="basic-plan-title">Basic</h3>
+        </div>
+        <div class="card-body">
+          <h4>$5 / mo</h4>
+          <ul class="card-element-container">
+            <li>2 team members</li>
+            <li>2GB storage</li>
+            <li>1000 requests/day</li>
+            <li>20000 users</li>
+          </ul>
+          <button class="btn btn-basic" type="button" aria-label="Order Basic plan for $5 per month">Order now</button>
+        </div>
+      </article>
+
+      <article class="card-standard" role="region" aria-labelledby="standard-plan-title">
+        <div class="card-header header-standard">
+          <h3 id="standard-plan-title">Standard</h3>
+        </div>
+        <div class="card-body">
+          <h4>$10 / mo</h4>
+          <ul class="card-element-container">
+            <li>5 team members</li>
+            <li>5GB storage</li>
+            <li>2000 requests/day</li>
+            <li>40000 users</li>
+          </ul>
+          <button class="btn btn-standard" type="button" aria-label="Order Standard plan for $10 per month">Order now</button>
+        </div>
+      </article>
+
+      <article class="card-premium" role="region" aria-labelledby="premium-plan-title">
+        <div class="card-header header-premium">
+          <h3 id="premium-plan-title">Premium</h3>
+        </div>
+        <div class="card-body">
+          <h4>$20 / mo</h4>
+          <ul class="card-element-container">
+            <li>Unlimited team members</li>
+            <li>10GB storage</li>
+            <li>5000 requests/day</li>
+            <li>Unlimited users</li>
+          </ul>
+          <button class="btn btn-premium" type="button" aria-label="Order Premium plan for $20 per month">Order now</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="footer-title-wrapper" aria-hidden="true">
+    <div class="footer-title-container">
+      <span class="line"></span>
+      <span class="title">Three Column Footer</span>
+      <span class="line"></span>
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <nav aria-label="Services">
+        <h6 class="footer-heading">Services</h6>
+        <a href="#" class="footer-link" tabindex="0">Branding</a>
+        <a href="#" class="footer-link" tabindex="0">Design</a>
+        <a href="#" class="footer-link" tabindex="0">Marketing</a>
+        <a href="#" class="footer-link" tabindex="0">Advertisement</a>
+      </nav>
+      <nav aria-label="Company">
+        <h6 class="footer-heading">Company</h6>
+        <a href="#" class="footer-link" tabindex="0">About us</a>
+        <a href="#" class="footer-link" tabindex="0">Contact</a>
+        <a href="#" class="footer-link" tabindex="0">Jobs</a>
+        <a href="#" class="footer-link" tabindex="0">Press kit</a>
+      </nav>
+      <nav aria-label="Legal">
+        <h6 class="footer-heading">Legal</h6>
+        <a href="#" class="footer-link" tabindex="0">Terms of use</a>
+        <a href="#" class="footer-link" tabindex="0">Privacy policy</a>
+        <a href="#" class="footer-link" tabindex="0">Cookie policy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
