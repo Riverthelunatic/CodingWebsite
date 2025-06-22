@@ -1,6 +1,131 @@
 <!DOCTYPE html>
 <html>
-<body>
+<style>
+    body {
+        font-family: 'Raleway', sans-serif;
+        background: url('chairchairchair.webp') no-repeat center -100px / cover;
+        overflow-x: hidden;
+        position: relative;
+        color: #fff;
+        min-height: 100vh;
+        line-height: 1.5;
+    }
+    body::before {
+        content: "";
+        position: fixed; /* fixed so it stays behind everything even on scroll */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(46, 43, 43, 0.7);
+        z-index: -1;
+    }
+    nav.primary-nav {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin: 3.675rem 0 3rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
 
+    nav.primary-nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.125rem;
+        padding: 0.25rem 0.5rem;
+        transition: color 0.3s ease;
+    }
+
+    nav.primary-nav a:hover,
+    nav.primary-nav a:focus {
+        color: #ff7300;
+        outline: none;
+    }
+
+    .tophelptext {
+        color: rgb(102, 102, 102);
+        font-size: 1.125rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .whitesmallbackground {
+        background-color: #ffffffd2;
+        padding: 2rem;
+        border-radius: 8px;
+        max-width: 46rem;
+        margin: auto;
+    }
+
+    .contactcontainer {
+        background-color: rgb(118, 118, 118);
+        padding: 1rem;
+        border-radius: 8px;
+        width: 12rem;
+        margin:10px;
+    }
+
+    .flexthingy {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap : wrap;
+    }
+    @media (max-width: 800px) {
+    .flexthingy {
+        flex-direction: column;
+    }
+    }
+</style>
+<body style="background-color:rgb(118, 118, 118)">
+    <main>
+        <nav class="primary-nav" aria-label="Primary navigation">
+            <a href="index.html" tabindex="0">Home</a>
+            <a href="aboutus.html" tabindex="0">About</a>
+            <a href="services.html" tabindex="0">Services</a>
+            <a href="reviews.html" tabindex="0">Reviews</a>
+            <a href="ContactUs.html" tabindex="0">Contact</a>
+          </nav>
+
+        <div class="whitesmallbackground">
+            <p class="tophelptext"><b>Having Issues? Contact our team who will assist you immediately!</b></p>
+            <div class="flexthingy">
+
+                <div class="contactcontainer">
+                    <p>person1</p>
+                    <p>Phone number : 0152935837</p>
+                    <p>Email : person1abc@gmail.com</p>
+                </div>
+                <div class="contactcontainer">
+                    <p>person2</p>
+                    <p>Phone number : 0627382925</p>
+                    <p>Email : person2@gmail.com</p>
+                </div>
+                <div class="contactcontainer">
+                    <p>person3</p>
+                    <p>Phone number : 01385725801</p>
+                    <p>Email : person3d@gmail.com</p>
+                </div>
+                <div class="contactcontainer">
+                    <p>person4</p>
+                    <p>Phone number : 0232992637</p>
+                    <p>Email : person4th@gmail.com</p>
+                </div>
+                <div class="contactcontainer">
+                    <p>person5</p>
+                    <p>Phone number : 0627920125</p>
+                    <p>Email : person5.@gmail.com</p>
+                </div>
+                <div class="contactcontainer">
+                    <p>person6</p>
+                    <p>Phone number : 0185235801</p>
+                    <p>Email : perso612@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
