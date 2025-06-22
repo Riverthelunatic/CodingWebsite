@@ -1,0 +1,160 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-RXf+QSDCUQs6cCf3nD1CVnXD3fP8bR8RRzDcf2QjB0kZ8zL1Z8Fz0+WyK1YqyzEMXh0L1rrcNLrUjNUkNqRL3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<style>
+    body {
+        font-family: 'Raleway', sans-serif;
+        background: url('chairchairchair.webp') no-repeat center -100px / cover;
+        overflow-x: hidden;
+        position: relative;
+        color: #fff;
+        min-height: 100vh;
+        line-height: 1.5;
+    }
+    body::before {
+        content: "";
+        position: fixed; /* fixed so it stays behind everything even on scroll */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(46, 43, 43, 0.7);
+        z-index: -1;
+    }
+    nav.primary-nav {
+        color:#ffffff;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin: 3.675rem 0 3rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        z-index: 99;
+    }
+
+    nav.primary-nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.125rem;
+        padding: 0.25rem 0.5rem;
+        transition: color 0.3s ease;
+        z-index: 99;
+    }
+
+    nav.primary-nav a:hover,
+    nav.primary-nav a:focus {
+        color: #ff7300;
+        outline: none;
+        z-index: 99;
+    }
+        * {
+        margin: 0;
+        padding: 0;
+    }
+    h2 {
+        color: white;
+        text-align: center;
+        font-size: 34px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        
+    }
+    .container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 100px 0px;
+    }
+
+    .servcies-section-wrapper {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .services-box {
+        background-color: #222222;
+        color: white;
+        width: 250px;
+        padding: 30px 20px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .services-box:hover {
+        background-color: #d2691e;
+    }
+
+    .services-box h3,
+    .services-box p {
+        margin: 0px;
+        text-align: center;
+    }
+
+    .services-box i {
+        background-color: white;
+        color: #d2691e;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+        margin-bottom: 16px;
+        font-size: 24px;
+    }
+
+</style>
+<nav class="primary-nav" aria-label="Primary navigation">
+    <a href="index.html" tabindex="0">Home</a>
+    <a href="aboutus.html" tabindex="0">About</a>
+    <a href="services.html" tabindex="0">Services</a>
+    <a href="reviews.html" tabindex="0">Reviews</a>
+    <a href="ContactUs.html" tabindex="0">Contact</a>
+</nav>
+<div class="container">
+    <h2>Our Services</h2>
+    <div class="servcies-section-wrapper">
+      <div class="services-box">
+        <i class="fa-solid fa-code"></i>
+        <h3>Web Development</h3>
+        <p>We build modern and responsive websites tailored to your business needs.</p>
+      </div>
+      <div class="services-box">
+        <i class="fa-solid fa-mobile-alt"></i>
+        <h3>Mobile App Development</h3>
+        <p>We create user-friendly mobile apps for iOS and Android platforms.</p>
+      </div>
+      <div class="services-box">
+        <i class="fa-solid fa-palette"></i>
+        <h3>UI/UX Design</h3>
+        <p>Crafting intuitive and engaging designs to enhance user experience.</p>
+      </div>
+      <div class="services-box">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>SEO Optimization</h3>
+        <p>Improving your website’s visibility on search engines to drive traffic.</p>
+      </div>
+      <div class="services-box">
+        <i class="fa-solid fa-shield-alt"></i>
+        <h3>Cybersecurity</h3>
+        <p>Ensuring the safety and security of your digital infrastructure.</p>
+      </div>
+      <div class="services-box">
+        <i class="fa-solid fa-cloud"></i>
+        <h3>Cloud Solutions</h3>
+        <p>Providing scalable and reliable cloud services for your business.</p>
+      </div>
+    </div>
+  </div>
+  
