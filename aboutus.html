@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background: url('chairchairchair.webp') no-repeat center -100px / cover;
+      overflow-x: hidden;
+      position: relative;
+      color: #fff;
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(46, 43, 43, 0.7);
+      z-index: -1;
+    }
+
+    .aboutus-section {
+      padding: 90px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .aboutus-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .aboutus, .aboutus-banner, .feature {
+      flex: 1 1 300px;
+    }
+
+    .aboutus-title {
+      font-size: 30px;
+      line-height: 32px;
+      margin-bottom: 39px;
+      padding-bottom: 11px;
+      text-transform: uppercase;
+      color: #ffffff;
+      position: relative;
+    }
+
+    .aboutus-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 54px;
+      height: 2px;
+      background: #fdb801;
+    }
+
+    .aboutus-text {
+      color: #ffffff;
+      font-size: 13px;
+      line-height: 22px;
+      margin-bottom: 35px;
+    }
+
+    .aboutus-more:hover {
+      background-color: #fdb801;
+      color: #000;
+    }
+
+    .aboutus-banner img {
+      width: 100%;
+      border-radius: 5px;
+      display: block;
+    }
+
+    .feature-box {
+      display: flex;
+      margin-bottom: 30px;
+      align-items: flex-start;
+    }
+
+    .iconset {
+      background: #fff;
+      width: 70px;
+      height: 70px;
+      border: 1px solid #fdb801;
+      border-radius: 50%;
+      color: #fdb801;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .iconset::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 100px;
+      width: 1px;
+      background: #fdb801;
+    }
+
+    .feature-content {
+      padding-left: 20px;
+    }
+
+    .feature-content h4 {
+      color: #bbbbbb;
+      font-size: 18px;
+      margin: 0 0 5px;
+    }
+
+    .feature-content p {
+      color: #ffffff;
+      font-size: 13px;
+      line-height: 22px;
+    }
+
+    @media (max-width: 768px) {
+      .aboutus-container {
+        flex-direction: column;
+      }
+    }
+    nav.primary-nav {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin: 3.675rem 0 3rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+
+    nav.primary-nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.125rem;
+        padding: 0.25rem 0.5rem;
+        transition: color 0.3s ease;
+    }
+
+    nav.primary-nav a:hover,
+    nav.primary-nav a:focus {
+        color: #ff7300;
+        outline: none;
+    }
+
+  </style>
+</head>
+<body>
+    <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html" tabindex="0">Home</a>
+        <a href="aboutus.html" tabindex="0">About</a>
+        <a href="services.html" tabindex="0">Services</a>
+        <a href="reviews.html" tabindex="0">Reviews</a>
+        <a href="ContactUs.html" tabindex="0">Contact</a>
+      </nav>
+
+  <div class="aboutus-section">
+    <div class="aboutus-container">
+      <div class="aboutus">
+        <h2 class="aboutus-title">About Us</h2>
+        <p class="aboutus-text">We build code that powers ideas. At our core, we believe clean code, smart design, and thoughtful development can turn visions into reality.
+
+          Whether you're launching a startup, building a web app, or automating your workflow, we’re here to write the logic behind your success.</p>
+
+      </div>
+
+
+
+   
+      <div class="feature">
+        <div class="feature-box">
+          <div class="iconset"></div>
+          <div class="feature-content">
+            <h4>Work with Heart</h4>
+            <p>Every line of code we write is crafted with purpose and care. We're not just developers — we're problem solvers, creators, and digital architects.</p>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <div class="iconset"></div>
+          <div class="feature-content">
+            <h4>Reliable Solutions</h4>
+            <p>From scalable web apps to sleek UI design, we deliver dependable solutions tailored to your needs. Our code is tested, clean, and built to last.
+
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <div class="iconset"></div>
+          <div class="feature-content">
+            <h4>Ongoing Support</h4>
+            <p>We don’t just launch — we stay with you. Our team offers continuous support and updates to keep your projects running smoothly and growing confidently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
